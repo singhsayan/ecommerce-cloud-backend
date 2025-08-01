@@ -41,33 +41,34 @@ This project implements a complete backend for an e-commerce platform using AWS 
 ![CloudFormation Stack](./CloudFormation-Stack.png)
 
 ### Sample cURL Tests
-- **Register User**:  
-  ![Register User](./curl-register-user.png)
 
-- **Create Product**:  
-  ![Create Product](./curl-create-product.png)
+**Register User**  
+![Register User](./curl-register-user.png)
 
-- **Place Order**:  
-  ![Place Order](./curl-place-order.png)
+**Create Product**  
+![Create Product](./curl-create-product.png)
 
-- **Get User**:  
-  ![Get User](./curl-get-user.png)
+**Place Order**  
+![Place Order](./curl-place-order.png)
 
-- **Get Product**:  
-  ![Get Product](./curl-get-product.png)
+**Get User**  
+![Get User](./curl-get-user.png)
 
-- **Get Order**:  
-  ![Get Order](./curl-get-order.png)
+**Get Product**  
+![Get Product](./curl-get-product.png)
 
-### DynamoDB Table Views
-- Users Table:  
-  ![Users Table](./my-users.png)
+**Get Order**  
+![Get Order](./curl-get-order.png)
 
-- Products Table:  
-  ![Products Table](./my-products.png)
+**Users Table View**  
+![My Users](./my-users.png)
 
-- Orders Table:  
-  ![Orders Table](./my-orders.png)
+**Products Table View**  
+![My Products](./my-products.png)
+
+**Orders Table View**  
+![My Orders](./my-orders.png)
+
 
 ## Getting Started
 
