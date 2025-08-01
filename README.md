@@ -55,7 +55,7 @@ This project implements a complete backend for an e-commerce platform using AWS 
 ![Get User](screenshots/curl-get-user.png)
 
 **Get Product**  
-![Get Product](./curl-get-product.png)
+![Get Product](screenshots/curl-get-product.png)
 
 **Get Order**  
 ![Get Order](screenshots/curl-get-order.png)
