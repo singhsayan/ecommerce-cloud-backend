@@ -29,45 +29,45 @@ This project implements a complete backend for an e-commerce platform using AWS 
 ## Screenshots
 
 ### API Gateway Configuration
-![API Gateway](./API-Gateway.png)
+![API Gateway](screenshots/API-Gateway.png)
 
 ### Lambda Function Deployments
-![Lambda Functions](./Lambda-Functions.png)
+![Lambda Functions](screenshots/Lambda-Functions.png)
 
 ### DynamoDB Tables
-![DynamoDB Tables](./Dynamodb-tables.png)
+![DynamoDB Tables](screenshots/Dynamodb-tables.png)
 
 ### CloudFormation Stack
-![CloudFormation Stack](./CloudFormation-Stack.png)
+![CloudFormation Stack](screenshots/CloudFormation-Stack.png)
 
 ### Sample cURL Tests
 
 **Register User**  
-![Register User](./curl-register-user.png)
+![Register User](screenshots/curl-register-user.png)
 
 **Create Product**  
-![Create Product](./curl-create-product.png)
+![Create Product](screenshots/curl-create-product.png)
 
 **Place Order**  
-![Place Order](./curl-place-order.png)
+![Place Order](screenshots/curl-place-order.png)
 
 **Get User**  
-![Get User](./curl-get-user.png)
+![Get User](screenshots/curl-get-user.png)
 
 **Get Product**  
 ![Get Product](./curl-get-product.png)
 
 **Get Order**  
-![Get Order](./curl-get-order.png)
+![Get Order](screenshots/curl-get-order.png)
 
 **Users Table View**  
-![My Users](./my-users.png)
+![My Users](screenshots/my-users.png)
 
 **Products Table View**  
-![My Products](./my-products.png)
+![My Products](screenshots/my-products.png)
 
 **Orders Table View**  
-![My Orders](./my-orders.png)
+![My Orders](screenshots/my-orders.png)
 
 
 ## Getting Started
