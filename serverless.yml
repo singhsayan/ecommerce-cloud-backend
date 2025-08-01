@@ -1,0 +1,123 @@
+service: ecommerce-backend-serverless
+frameworkVersion: '3'
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    PRODUCTS_TABLE: ecommerce-products
+    ORDERS_TABLE: ecommerce-orders
+    USERS_TABLE: ecommerce-users
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:Scan
+        - dynamodb:Query
+      Resource:
+        - arn:aws:dynamodb:us-east-1:*:table/ecommerce-products
+        - arn:aws:dynamodb:us-east-1:*:table/ecommerce-orders
+        - arn:aws:dynamodb:us-east-1:*:table/ecommerce-users
+
+package:
+  patterns:
+    - '!*.log'
+    - '!tests/**'
+    - '!docs/**'
+    - '!README.md'
+    - '!terraform/**'
+
+functions:
+  createProduct:
+    handler: src/products/handler.createProductHandler
+    events:
+      - http:
+          path: products
+          method: post
+          cors: true
+
+  getProduct:
+    handler: src/products/handler.getProductHandler
+    events:
+      - http:
+          path: products/{id}
+          method: get
+          cors: true
+
+  placeOrder:
+    handler: src/orders/handler.placeOrderHandler
+    events:
+      - http:
+          path: orders
+          method: post
+          cors: true
+
+  getOrder:
+    handler: src/orders/handler.getOrderHandler
+    events:
+      - http:
+          path: orders/{id}
+          method: get
+          cors: true
+
+  registerUser:
+    handler: src/users/handler.registerUserHandler
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+
+  getUser:
+    handler: src/users/handler.getUserHandler
+    events:
+      - http:
+          path: users/{id}
+          method: get
+          cors: true
+
+resources:
+  Resources:
+    ProductsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ecommerce-products
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+
+    OrdersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ecommerce-orders
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ecommerce-users
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
